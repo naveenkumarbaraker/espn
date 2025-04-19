@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-dark dark:text-light;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-secondary dark:bg-primary-light dark:hover:bg-primary-dark;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary hover:bg-primary hover:text-white dark:bg-dark-light dark:text-primary-light dark:border-primary-light dark:hover:bg-primary-light dark:hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark-light rounded-xl shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:border-gray-600 dark:focus:ring-primary-light;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-8 text-center text-dark dark:text-light;
+  }
+
+  .article-card {
+    @apply card p-6 space-y-4;
+  }
+
+  .article-title {
+    @apply text-xl font-bold text-dark dark:text-light;
+  }
+
+  .article-excerpt {
+    @apply text-gray-600 dark:text-gray-300;
+  }
+
+  .article-meta {
+    @apply flex items-center text-sm text-gray-500 dark:text-gray-400;
+  }
+
+  .read-more-link {
+    @apply inline-flex items-center text-primary dark:text-primary-light hover:text-secondary dark:hover:text-secondary-light transition-colors duration-200;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-dark-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+} 
